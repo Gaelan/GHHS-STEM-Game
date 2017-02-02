@@ -54,7 +54,7 @@ public class Projectile : MonoBehaviour {
 
 		CheckCollisions (moveDistance);
 
-		transform.Translate (Vector3.forward * moveDistance);
+		transform.Translate (Vector2.up * moveDistance);
 
 	}
 

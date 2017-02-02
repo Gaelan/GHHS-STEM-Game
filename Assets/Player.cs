@@ -43,11 +43,11 @@ public class Player : LivingEntity {
 
 		// Movement input
 
-		Vector3 moveInput = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
-		Vector3 moveVelocity = moveInput.normalized * moveSpeed;
+		Vector2 moveInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+		Vector2 moveVelocity = moveInput.normalized * moveSpeed;
 		controller.Move (moveVelocity);
 		//if (Input.GetAxisRaw ("Vertical") < 0) {
-			//transform.localScale += new Vector3(0.1F, 0, 0);
+			//transform.localScale += new Vector2(0.1F, 0, 0);
 		//} 
 
 
@@ -56,7 +56,7 @@ public class Player : LivingEntity {
 
 		//	Ray ray = viewCamera.ScreenPointToRay (Input.mousePosition);
 
-	//		Plane groundPlane = new Plane (Vector3.up, Vector3.zero);
+	//		Plane groundPlane = new Plane (Vector2.up, Vector2.zero);
 
 	//		float rayDistance;
 
@@ -64,7 +64,7 @@ public class Player : LivingEntity {
 
 	//		if (groundPlane.Raycast(ray,out rayDistance)) {
 
-	//		Vector3 point = ray.GetPoint(rayDistance);
+	//		Vector2 point = ray.GetPoint(rayDistance);
 
 			//Debug.DrawLine(ray.origin,point,Color.red);
 

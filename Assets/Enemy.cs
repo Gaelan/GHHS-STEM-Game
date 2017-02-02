@@ -142,11 +142,11 @@ public class Enemy : LivingEntity {
 
 
 
-		Vector3 originalPosition = transform.position;
+		Vector2 originalPosition = transform.position;
 
-		Vector3 dirToTarget = (target.position - transform.position).normalized;
+		Vector2 dirToTarget = (target.position - transform.position).normalized;
 
-		Vector3 attackPosition = target.position - dirToTarget * (myCollisionRadius);
+		Vector2 attackPosition = (Vector2)target.position - dirToTarget * (myCollisionRadius);
 
 
 
@@ -180,7 +180,7 @@ public class Enemy : LivingEntity {
 
 			float interpolation = (-Mathf.Pow(percent,2) + percent) * 4;
 
-			transform.position = Vector3.Lerp(originalPosition, attackPosition, interpolation);
+			transform.position = Vector2.Lerp(originalPosition, attackPosition, interpolation);
 
 
 
@@ -210,9 +210,9 @@ public class Enemy : LivingEntity {
 
 			if (currentState == State.Chasing) {
 
-				Vector3 dirToTarget = (target.position - transform.position).normalized;
+				Vector2 dirToTarget = (target.position - transform.position).normalized;
 
-				Vector3 targetPosition = target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold/2);
+				Vector2 targetPosition = (Vector2)target.position - dirToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold/2);
 
 				if (!dead) {
 

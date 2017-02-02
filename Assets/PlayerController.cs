@@ -11,21 +11,21 @@ public class PlayerController : MonoBehaviour {
 
 
 
-	Vector3 velocity;
+	Vector2 velocity;
 
-	Rigidbody myRigidbody;
+	Rigidbody2D myRigidbody;
 
 
 
 	void Start () {
 
-		myRigidbody = GetComponent<Rigidbody> ();
+		myRigidbody = GetComponent<Rigidbody2D> ();
 
 	}
 
 
 
-	public void Move(Vector3 _velocity) {
+	public void Move(Vector2 _velocity) {
 
 		velocity = _velocity;
 
@@ -33,11 +33,8 @@ public class PlayerController : MonoBehaviour {
 
 
 
-	public void LookAt(Vector3 lookPoint) {
-
-		Vector3 heightCorrectedPoint = new Vector3 (lookPoint.x, transform.position.y, lookPoint.z);
-
-		transform.LookAt (heightCorrectedPoint);
+	public void LookAt(Vector2 lookPoint) {
+		transform.LookAt (lookPoint);
 
 	}
 
